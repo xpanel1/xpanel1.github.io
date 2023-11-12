@@ -1,1 +1,1 @@
-# xpanel1.github.io
+# rubika-panel.github.io
